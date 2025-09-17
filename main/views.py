@@ -22,7 +22,6 @@ def create_news(request):
     if form.is_valid() and request.method == "POST":
         form.save()
         return redirect('main:show_main')
-
     context = {'form': form}
     return render(request, "create_news.html", context)
 
@@ -33,7 +32,6 @@ def show_news(request, id):
     context = {
         'news': news
     }
-
     return render(request, "news_detail.html", context)
 
 def show_xml(request):
